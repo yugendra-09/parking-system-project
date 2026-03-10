@@ -1,0 +1,14 @@
+/* public/css/admin.css - Specific styles for admin pages */
+.admin-dashboard-metrics {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+.metric-card {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    flex: 1;
+    border-radius: 5px;
+    text-align: center;
+}

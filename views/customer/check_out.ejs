@@ -1,0 +1,55 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<h2 class="mt-4">Process Check Out & Payment</h2>
+
+<% if (record) { %>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card p-4 shadow-sm">
+                <h4 class="card-title text-primary">Parking Summary</h4>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">Vehicle: <strong><%= record.vehicle_number %></strong></li>
+                    <li class="list-group-item">Check-In: <%= new Date(record.check_in_time).toLocaleString() %></li>
+                    <li class="list-group-item">Duration: **<%= duration %> hours**</li>
+                    <li class="list-group-item bg-warning-subtle">Total Fee Due: <h2>**₹<%= fee %>**</h2></li>
+                </ul>
+
+                <form action="/checkout/<%= record.record_id %>" method="POST">
+                    <input type="hidden" name="final_fee" value="<%= fee %>">
+                    
+                    <h5 class="mt-4 mb-3">1. Select Payment Method</h5>
+                    
+                    <div class="mb-3">
+                        <label for="payment_method" class="form-label">Method:</label>
+                        <select id="payment_method" name="payment_method" class="form-select" required>
+                            <option value="">Choose...</option>
+                            <option value="UPI / QR Code">UPI / QR Code (Recommended)</option>
+                            <option value="Credit/Debit Card">Credit/Debit Card</option>
+                            <option value="Wallet">Digital Wallet</option>
+                        </select>
+                    </div>
+
+                    <h5 class="mt-4 mb-2">2. Confirm Payment</h5>
+                    <button type="submit" class="btn btn-success btn-lg w-100">Simulate Payment & Exit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card p-4 bg-light text-center shadow-sm">
+                <h4 class="card-title text-primary"><i class="bi bi-qr-code-scan"></i> Pay by Scanner or Number</h4>
+                <p class="text-muted">Use this QR code or number to complete the ₹<%= fee %> payment.</p>
+                
+                <img src="/img/scanner.jpg" alt="Simulated UPI QR Code" class="img-fluid my-3 mx-auto border" style="max-width: 250px;">
+                
+                <div class="alert alert-primary">
+                    **Simulated UPI ID:** **PARKLY.PAY@OKBANK**
+                </div>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+    <div class="alert alert-danger mt-3">Error: Parking record not found or already checked out.</div>
+<% } %>
+
+<%- include('../partials/footer') %>

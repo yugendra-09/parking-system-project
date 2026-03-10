@@ -1,0 +1,21 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<section class="hero-section">
+    <h2>Welcome to the Smart Vehicle Parking System</h2>
+    <p>Book, manage, and pay for your parking online. Simple, secure, and fast.</p>
+    <% if (!user) { %>
+        <p><a href="/signup" class="button-primary">Get Started Now</a></p>
+    <% } %>
+</section>
+
+<section class="info-table">
+    <h3>Key Features</h3>
+    <table>
+        <tr><th>Feature</th><th>Description</th></tr>
+        <tr><td>Online Booking</td><td>Reserve your spot by the hour or day.</td></tr>
+        <tr><td>Real-Time Availability</td><td>Check which spots are open.</td></tr>
+        <tr><td>Usage Reporting</td><td>Admin can view full revenue reports.</td></tr>
+    </table>
+</section>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,17 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<h2>Parking Tariff Rates</h2>
+
+<table class="data-table">
+    <thead>
+        <tr><th>Vehicle Type</th><th>Rate Per Hour</th><th>Maximum Daily Rate</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Two-Wheeler</td><td>₹20</td><td>₹150</td></tr>
+        <tr><td>Car (Sedan/Hatchback)</td><td>₹50</td><td>₹300</td></tr>
+        <tr><td>SUV/Large Vehicle</td><td>₹70</td><td>₹400</td></tr>
+        <tr><td>Truck/Bus</td><td>₹100</td><td>₹600</td></tr>
+    </tbody>
+</table>
+
+<%- include('../partials/footer') %>

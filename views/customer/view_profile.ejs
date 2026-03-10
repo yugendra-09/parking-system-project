@@ -1,0 +1,36 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<h2 class="mt-4">Update Your Profile</h2>
+
+<% if (message) { %>
+    <div class="alert alert-success" role="alert"><%= message %></div>
+<% } %>
+<% if (error) { %>
+    <div class="alert alert-danger" role="alert"><%= error %></div>
+<% } %>
+
+<form action="/profile" method="POST">
+    
+    <div class="mb-3">
+        <label for="email" class="form-label">Email (Cannot be changed)</label>
+        <input type="email" id="email" name="email" class="form-control" value="<%= userData.email %>" readonly>
+    </div>
+    
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username" class="form-control" value="<%= userData.username %>" required>
+    </div>
+    
+    <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="text" id="phone" name="phone" class="form-control" value="<%= userData.phone || '' %>">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<p class="mt-3">
+    <a href="/dashboard">Return to Dashboard</a>
+</p>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,98 @@
+/* public/css/style.css - Core site styles */
+body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+.main-header { background-color: #007bff; color: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo { display: flex; align-items: center; }
+.logo img { height: 40px; margin-right: 15px; }
+.menu-frame ul { list-style: none; padding: 0; margin: 0; display: flex; }
+.menu-frame li a { color: white; text-decoration: none; padding: 10px 15px; display: block; transition: background-color 0.3s; }
+.menu-frame li a:hover { background-color: #0056b3; }
+.content-body { padding: 20px; max-width: 1200px; margin: 20px auto; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+.data-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+.data-table th, .data-table td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+.data-table th { background-color: #f2f2f2; }
+.button-primary { background-color: #28a745; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+.button-delete { background-color: #dc3545; color: white; padding: 8px; border: none; border-radius: 4px; cursor: pointer; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default body margin */
+}
+
+/* 2. Make the body a Flex Container (column direction) */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Make the main content area expand to fill all available space */
+.content-body {
+    flex-grow: 1; /* This pushes the footer down */
+    /* Retain your existing max-width and margin from previous steps */
+    padding: 20px;
+    max-width: 1200px; 
+    margin: 20px auto; 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. Ensure the footer remains at the bottom */
+footer {
+    /* Your existing footer styles */
+    text-align: center; 
+    padding: 10px; 
+    background-color: #333; 
+    color: white; 
+    flex-shrink: 0; /* Prevents footer from shrinking */
+}
+/* public/css/style.css - Footer Stick Fix and Core Styles */
+html, body {
+    height: 100%;
+    margin: 0; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+.main-header { 
+    background-color: #007bff; 
+    color: white; 
+    padding: 10px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-shrink: 0; /* Prevents header from shrinking */
+}
+.logo { display: flex; align-items: center; }
+.logo img { height: 40px; margin-right: 15px; }
+.menu-frame ul { list-style: none; padding: 0; margin: 0; display: flex; }
+.menu-frame li a { color: white; text-decoration: none; padding: 10px 15px; display: block; transition: background-color 0.3s; }
+.menu-frame li a:hover { background-color: #0056b3; }
+
+.content-body { 
+    flex-grow: 1; /* Pushes the footer down */
+    padding: 20px; 
+    max-width: 1200px; 
+    margin: 20px auto; 
+    background: white; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer { 
+    text-align: center; 
+    padding: 10px; 
+    background-color: #333; 
+    color: white; 
+    flex-shrink: 0; /* Prevents footer from shrinking */
+}
+
+/* Old custom styles for consistency with Bootstrap */
+.data-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+/* Note: Most table/button styles are now handled by Bootstrap */

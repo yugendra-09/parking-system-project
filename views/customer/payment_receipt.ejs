@@ -1,0 +1,33 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<div class="card p-5 mt-5 shadow-lg">
+    <div class="text-center">
+        <h1 class="text-success"><i class="bi bi-check-circle-fill"></i> Payment Successful!</h1>
+        <p class="lead">Thank you, <%= user.username %>, for parking with us.</p>
+    </div>
+
+    <hr>
+    
+    <h4 class="mb-3">Transaction Receipt</h4>
+    <ul class="list-group mb-4">
+        <li class="list-group-item d-flex justify-content-between">
+            Vehicle Number: <span><strong><%= record.vehicle_number %></strong></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+            Payment Method: <span><%= paymentMethod %></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+            Transaction ID: <span><%= transactionId %> (Simulated)</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-primary-subtle fw-bold">
+            Total Amount Paid: <span>₹<%= parseFloat(record.rate_paid).toFixed(2) %></span>
+        </li>
+    </ul>
+
+    <p class="text-center">
+        Your parking record has been cleared, and the spot is now available.
+    </p>
+    <a href="/dashboard" class="btn btn-secondary mt-3">Return to Dashboard</a>
+</div>
+
+<%- include('../partials/footer') %>

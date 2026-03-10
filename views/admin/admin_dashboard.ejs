@@ -1,0 +1,20 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<h2>Admin Dashboard</h2>
+<p>Welcome to the management panel. You have <%= totalParked %> vehicles currently parked.</p>
+
+<div class="admin-dashboard-metrics">
+    <div class="metric-card">
+        <h3>Total Parked Vehicles</h3>
+        <h1><%= totalParked %></h1>
+    </div>
+    <div class="metric-card">
+        <h3>View All Records</h3>
+        <p><a href="/admin/records" class="button-primary">Go to Records</a></p>
+    </div>
+    <div class="metric-card">
+        <h3>View Revenue</h3>
+        <p><a href="/admin/reports/revenue" class="button-primary">View Reports</a></p>
+    </div>
+</div>
+<%- include('../partials/footer') %>

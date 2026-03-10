@@ -1,0 +1,11 @@
+<%- include('../partials/header', { title: title, user: user }) %>
+
+<h2>Parking Spot Availability Map</h2>
+<p>This page demonstrates the concept of using a grid or **Canvas** to visually display occupied/available spots.</p>
+
+<div style="border: 1px solid #ccc; padding: 20px;">
+    <canvas id="parkingMap" width="800" height="400" style="border: 1px solid black;"></canvas>
+    <p>Spots: <span style="color: green;">Green = Available</span>, <span style="color: red;">Red = Occupied</span></p>
+</div>
+
+<%- include('../partials/footer') %>

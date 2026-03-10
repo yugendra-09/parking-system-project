@@ -1,0 +1,27 @@
+<nav class="menu-frame">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/tariff">Rates</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        
+        <% if (user) { %>
+            <li><a href="/checkin">Park Vehicle</a></li>
+            <li><a href="/dashboard">My Dashboard</a></li>
+            <li><a href="/profile">My Profile</a></li>
+            
+            <% if (user.role === 'admin') { %>
+                <li><a href="/admin/dashboard">Admin Panel</a></li>
+                <li><a href="/admin/records">Records (Search)</a></li>
+                <li><a href="/admin/reports/revenue">Revenue Report</a></li>
+                <li><a href="/admin/users">Manage Users</a></li> 
+            <% } %>
+            
+            <li><a href="/logout">Logout</a></li>
+            
+        <% } else { %>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Sign Up</a></li>
+        <% } %>
+    </ul>
+</nav>
